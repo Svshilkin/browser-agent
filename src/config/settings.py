@@ -3,7 +3,8 @@ from pathlib import Path
 from typing import Optional
 from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
-from pydantic import ConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
+
 
 # Load .env file
 env_path = Path(__file__).parent.parent.parent / ".env"
@@ -55,13 +56,14 @@ class Settings(BaseSettings):
     network_idle_timeout: int = 5000  # Wait for network idle (ms)
     page_load_timeout: int = 30000  # Page load timeout (ms)
     element_interaction_delay: int = 100  # Delay before interaction (ms)
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        case_sensitive=False,
+        extra="ignore",  # Ignore extra fields in .env
+    )
     
-    class Config:
-        """Pydantic configuration"""
-        env_file = ".env"
-        env_file_encoding = "utf-8"
-        case_sensitive = False
-        extra = "ignore"  # Ignore extra fields in .env
     
     def __init__(self, **data):
         super().__init__(**data)
