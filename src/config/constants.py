@@ -111,3 +111,39 @@ SYSTEM_PROMPT_LANGUAGE = "en"
 # ========== VERSION INFO ==========
 APP_VERSION = "0.1.0"
 PYTHON_VERSION_REQUIRED = "3.10"
+
+# ========== Browser Type ==========
+BROWSER_TYPE = "chromium"  # Options: chromium, firefox, webkit
+
+# ========== Display Settings ==========
+BROWSER_HEADLESS = True
+BROWSER_VIEWPORT_WIDTH = 1280
+BROWSER_VIEWPORT_HEIGHT = 720
+
+# ========== Timeouts ==========
+BROWSER_TIMEOUT = 30000  # 30 seconds
+BROWSER_NAVIGATION_TIMEOUT_MS = 30000
+BROWSER_ACTION_TIMEOUT_MS = 10000
+
+# ========== User Agent ==========
+BROWSER_USER_AGENT = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/120.0.0.0 Safari/537.36"
+)
+
+# ========== Retry Settings ==========
+BROWSER_MAX_RETRIES = 3
+BROWSER_RETRY_DELAY = 2  # seconds, exponential backoff
+
+# ========== Performance ==========
+BROWSER_DISABLE_IMAGES = False
+BROWSER_DISABLE_CSS = False
+BROWSER_OFFLINE_MODE = False
+
+# ========== Launch Arguments ==========
+BROWSER_ARGS = [
+    "--disable-blink-features=AutomationControlled",
+    "--disable-dev-shm-usage",
+    "--no-sandbox",
+]

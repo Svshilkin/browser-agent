@@ -30,6 +30,16 @@ class Settings(BaseSettings):
     headless: bool = False  # Set to True for CI/CD
     browser_timeout: int = 30000  # milliseconds
     browser_launch_args: list[str] = []
+    browser_viewport_width: int = 1280
+    browser_viewport_height: int = 720
+    browser_headless: bool = True
+    browser_max_retries: int = 3
+    browser_retry_delay: float = 2.0
+    browser_user_agent: str = (  # ADD THIS
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/120.0.0.0 Safari/537.36"
+    )
     
     # ========== AGENT SETTINGS ==========
     max_iterations: int = 20  # Max tool-use loop iterations
