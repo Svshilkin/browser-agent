@@ -31,7 +31,7 @@ pip install --upgrade pip setuptools wheel
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -r requirements.txt
+pip install -e .
 
 # Install playwright browsers
 echo "Installing Playwright browsers..."

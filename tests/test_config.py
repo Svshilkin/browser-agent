@@ -99,9 +99,11 @@ class TestLogger:
     def test_logger_logging(self, caplog):
         """Test that logger can log messages."""
         import logging
+        caplog.set_level(logging.INFO)
         test_logger = logging.getLogger("test_logger")
         test_logger.info("Test message")
-        assert "Test message" in caplog.text or caplog.records
+        assert "Test message" in caplog.text
+
 
 
 class TestIntegration:
