@@ -22,6 +22,25 @@ from src.agent.browser_agent import (
     AgentResult,
 )
 
+from src.agent.multi_step.enums import (
+    TaskType,
+    TaskPriority,
+    TaskStatus,
+    DependencyType,
+)
+
+from src.agent.multi_step.models import (
+    TaskDefinition,
+    TaskResult,
+    TaskDependency,
+    TaskMetrics,
+)
+
+from src.agent.multi_step.dependency_graph import DependencyGraph
+from src.agent.multi_step.task_executor import TaskExecutor
+from src.agent.multi_step.multi_step_manager import MultiStepTaskManager
+
+
 __all__ = [
     "ActionType",
     "ActionDecision",
@@ -34,4 +53,15 @@ __all__ = [
     "ElementNotFoundError",
     "BrowserAgent",
     "AgentResult",
+    "TaskType",
+    "TaskPriority",
+    "TaskStatus",
+    "DependencyType",
+    "TaskDefinition",
+    "TaskResult",
+    "TaskDependency",
+    "TaskMetrics",
+    "DependencyGraph",
+    "TaskExecutor",
+    "MultiStepTaskManager",
 ]
