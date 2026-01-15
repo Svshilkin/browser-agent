@@ -22,7 +22,7 @@ class TestSettings:
         """Test that API key is loaded."""
         settings = get_settings()
         # This will fail if .env is not set up correctly
-        assert settings.anthropic_api_key != ""
+        assert settings.api_key != ""
     
     def test_settings_defaults(self):
         """Test that default values are set."""

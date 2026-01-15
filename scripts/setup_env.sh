@@ -41,7 +41,7 @@ playwright install chromium
 if [ ! -f ".env" ]; then
     echo "Creating .env file..."
     cp .env.example .env
-    echo "Please edit .env and add your ANTHROPIC_API_KEY"
+    echo "Please edit .env and add your API_KEY"
 else
     echo ".env file already exists"
 fi
@@ -56,7 +56,7 @@ echo ""
 echo "Setup complete!"
 echo ""
 echo "Next steps:"
-echo "1. Edit .env file and add your ANTHROPIC_API_KEY"
+echo "1. Edit .env file and add your API_KEY"
 echo "2. Run: python -m src.main"
 echo ""
 echo "Activate environment in future with:"

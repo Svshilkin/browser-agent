@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     """
     
     # ========== ANTHROPIC API ==========
-    anthropic_api_key: str = ""  # Required, must be set in .env
+    api_key: str = ""  # Required, must be set in .env
     
     # ========== MODEL CONFIGURATION ==========
     llm_max_tokens: int = 4096
@@ -78,9 +78,9 @@ class Settings(BaseSettings):
     def __init__(self, **data):
         super().__init__(**data)
         # Validate required fields
-        if not self.anthropic_api_key:
+        if not self.api_key:
             raise ValueError(
-                "ANTHROPIC_API_KEY must be set in .env file. "
+                "API_KEY must be set in .env file. "
                 "Copy .env.example to .env and add your API key."
             )
         # Create necessary directories
