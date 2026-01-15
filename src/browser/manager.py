@@ -7,6 +7,7 @@ from playwright.sync_api import TimeoutError, Error as PlaywrightError
 
 from src.config import Settings
 from src.utils import get_logger
+from src.browser.analyzer import PageAnalyzer
 
 logger = get_logger(__name__)
 
@@ -294,3 +295,8 @@ class BrowserManager:
         """Cleanup on context exit"""
         self.close()
         return False
+    
+    async def get_page_structure(self):
+        content = await self.page.content()
+        analyzer = PageAnalyzer(content, page_url=self.page.url)
+        return analyzer.get_page_structure()
